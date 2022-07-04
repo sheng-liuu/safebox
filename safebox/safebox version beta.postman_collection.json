@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "3f99a656-488b-422d-9ce7-fe32b97e3962",
+		"name": "safebox version beta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21662512"
+	},
+	"item": [
+		{
+			"name": "create new safebox",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Secure safebox 01\",\r\n  \"password\": \"extremelySecurePassword1!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/beta/safebox",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beta",
+						"safebox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get content of safebox",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "safebox1_123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "safebox1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/beta/safebox/1/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beta",
+						"safebox",
+						"1",
+						"items"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "a99c18d0-c543-4029-8836-12b365f84e16",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add content to safebox",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "safebox1_123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "safebox1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"items\": [\r\n    \"Safebox content 03\",\r\n    \"Safebox content 02\",\r\n    \"Safebox content 01\",\r\n    \"New safebox content\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/beta/safebox/1/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"beta",
+						"safebox",
+						"1",
+						"items"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
